@@ -1,0 +1,23 @@
+.product {
+    color: #151515;
+    max-width: 15rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product img {
+    max-height: 10rem;
+}
+
+.image{
+    min-height: 10rem;
+}
+
+.product .card-title {
+    margin-top: 1rem;
+    min-height: 5rem;
+}
+
+.product .card-text {
+    font-size: .75em;
+}
