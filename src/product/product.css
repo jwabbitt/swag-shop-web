@@ -24,7 +24,7 @@
 
 .product .btn {
     min-height: 3.5rem;
-    min-width: 10rem;
+    width: 100%;
 }
 
 .product .btn-danger {
