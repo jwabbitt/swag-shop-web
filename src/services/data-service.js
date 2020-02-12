@@ -15,8 +15,8 @@ class DataService {
     }
 
     itemOnWishList = item => {
-        for (var x = 0; x < wishList.length; x++) {
-            if (wishList[x]._id === item._id) {
+        for (var i = 0; i < wishList.length; i++) {
+            if (wishList[i]._id === item._id) {
                 return true;
             }
         }
@@ -24,7 +24,9 @@ class DataService {
     }
 
     addWishListItem = item => {
+        console.log("Item added to wishList: " + item.title)
         wishList.push(item);
+        console.log("New Wishlist: " + JSON.stringify(wishList));
         ns.postNotification(NOTIF_WISHLIST_CHANGED, wishList);
     }
 

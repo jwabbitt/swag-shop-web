@@ -21,3 +21,12 @@
 .product .card-text {
     font-size: .75em;
 }
+
+.product .btn {
+    min-height: 3.5rem;
+    min-width: 10rem;
+}
+
+.product .btn-danger {
+    font-size: .49em;
+}

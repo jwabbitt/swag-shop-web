@@ -1,23 +1,33 @@
 import React, {Component} from 'react';
 import './product.css';
 import DataService from "../services/data-service";
+import NotificationService, {NOTIF_WISHLIST_CHANGED} from "../services/notification-service";
 
 let ds = new DataService();
+let ns = new NotificationService();
 
 class Product extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {onWishList: ds.itemOnWishList()};
+        this.state = {onWishList: ds.itemOnWishList(this.props.product)};
 
         // Bind functions
         this.onButtonClicked = this.onButtonClicked.bind(this);
-        this.onWishListChanged = this.onWishListChanged.bind(this);
+        this.onProductChange = this.onProductChanged.bind(this);
     }
-    
 
-    onWishListChanged(newWishList) {
+    componentDidMount() {
+        ns.addObserver(NOTIF_WISHLIST_CHANGED, this, this.onProductChange);
+    }
+
+    componentWillUnmount() {
+        ns.removeObserver(this, NOTIF_WISHLIST_CHANGED);
+    }
+
+    onProductChanged(newWishList) {
+        console.log("Product 'itemOnWishLIst' should've change for " + this.props.product.title);
         this.setState({onWishList: ds.itemOnWishList(this.props.product)});
     }
 

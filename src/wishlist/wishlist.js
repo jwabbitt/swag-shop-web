@@ -26,6 +26,7 @@ class WishList extends Component {
     }
 
     onWishListChanged(newWishList) {
+        console.log("onWishLIst changed called? " + JSON.stringify(newWishList));
         this.setState({wishList: newWishList});
     }
 
