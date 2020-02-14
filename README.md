@@ -1,3 +1,5 @@
+Make sure to download swagShopApi in order to use this with mongo: https://github.com/jwabbitt/swagShopApi
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
